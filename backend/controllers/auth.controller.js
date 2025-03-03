@@ -5,6 +5,10 @@ export const signup = async (req, res) => {
     // res.send("signup");
     try {
         const {name, username, email, password} = req.body;
+
+        if(!name || !username || !email || !password) {
+            return res.status(400).json({message: "All fields are required"});
+        }
         const existingEmail = await User.findOne({email});
         if (existingEmail) {
             return res.status(400).json({message: "Email already exists"});
