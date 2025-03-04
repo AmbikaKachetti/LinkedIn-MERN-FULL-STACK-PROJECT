@@ -71,6 +71,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema); // here in db "users" with lowercase, this is what mongodb done underhood.
 
 export default User;
