@@ -1,6 +1,11 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+// CommonJS way of importing module
+// const { sendWelcomeEmail } = require('../utils/emailService'); // Adjust the path as needed 
+
+// ES Module way of importing modules
+import { sendWelcomeEmail } from "../emails/emailHandlers.js";
 export const signup = async (req, res) => {
   // res.send("signup");
   try {
